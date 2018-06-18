@@ -22,7 +22,7 @@ $(document).ready(function() {
     //colours
     if ($(this).hasClass('colour')) {
       if (c != defaultColour) {
-        $('#colour-scheme').attr('href','css/colour-'+ c +'.css');
+        $('#colour-scheme').attr('href','./assets/css/colour-'+ c +'.css');
       }
       else {
         $('#colour-scheme').attr('href', '#');
