@@ -1622,8 +1622,7 @@ a.btn-hh-trigger.target-open:after {
 #highlighted {
   color: #ffffff;
 }
-#content {
-  padding: 20px 0 20px 0;
+#content {  
   background: #ffffff;
 }
 #content > .block:first-child {

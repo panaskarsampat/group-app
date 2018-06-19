@@ -59,6 +59,11 @@ import { FollowusComponent } from './footer/followus/followus.component';
 import { SubfooterComponent } from './footer/subfooter/subfooter.component';
 import { CopyrightComponent } from './footer/subfooter/copyright/copyright.component';
 import { CopyrightListComponent } from './footer/subfooter/copyright-list/copyright-list.component';
+import { AdsIndustrialtrainingComponent } from './content/showcase/showcase-text/ads-industrialtraining/ads-industrialtraining.component';
+import { PlansTextComponent } from './content/plans/plans-text/plans-text.component';
+import { AdsAboutusComponent } from './content/plans/plans-text/ads-aboutus/ads-aboutus.component';
+import { BlockquoteComponent } from './content/testimonials/blockquote/blockquote.component';
+import { LatestInvolvementComponent } from './content/testimonials/latest-involvement/latest-involvement.component';
 
 
 @NgModule({
@@ -117,7 +122,12 @@ import { CopyrightListComponent } from './footer/subfooter/copyright-list/copyri
     FollowusComponent,
     SubfooterComponent,
     CopyrightComponent,
-    CopyrightListComponent
+    CopyrightListComponent,
+    AdsIndustrialtrainingComponent,
+    PlansTextComponent,
+    AdsAboutusComponent,
+    BlockquoteComponent,
+    LatestInvolvementComponent
   ],
   imports: [
     BrowserModule,
