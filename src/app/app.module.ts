@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { RouterModule } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routing';
@@ -67,6 +67,8 @@ import { BlockquoteComponent } from './content/testimonials/blockquote/blockquot
 import { LatestInvolvementComponent } from './content/testimonials/latest-involvement/latest-involvement.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdsLoginComponent } from './login/ads-login/ads-login.component';
+import { AdsRegisterComponent } from './register/ads-register/ads-register.component';
 
 
 @NgModule({
@@ -132,11 +134,14 @@ import { RegisterComponent } from './register/register.component';
     BlockquoteComponent,
     LatestInvolvementComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdsLoginComponent,
+    AdsRegisterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule ,
+    FormsModule,
+    ReactiveFormsModule,
     NgxSpinnerModule,
     RouterModule.forRoot(appRoutes)    
   ],

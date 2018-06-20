@@ -1,7 +1,99 @@
 <div id="content">
-    <div class="container">
-        <h3>
-          Register
-        </h3>
+        <div class="container">
+            <div class="block block-border-bottom">
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3 class="block-title">
+                            Register
+                          </h3>
+                      <div class="stat">
+                        <form [formGroup]="form" (ngSubmit)="registerUser(form)">
+                            <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                  <span class="input-group-addon"><i class="fa fa-fw fa-envelope"></i></span>
+                                  <input type="text" formControlName='email' class="form-control" placeholder="Email" name="email">                              
+                                </div>
+                                <div style="font-size: 10px; color: red;" *ngIf="form.controls['email'].touched && !form.controls['email'].valid">                                                                          
+                                    <span *ngIf="form.controls['email'].hasError('required') ">  
+                                      Please enter email id.
+                                    </span>  
+                                         
+                                   <span *ngIf="form.controls['email'].hasError('email') ">  
+                                      Invalid email id.
+                                    </span>                                                                                
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                    <input type="text" formControlName='userfullname' class="form-control" placeholder="User full name">
+                                </div>
+                                <div style="font-size: 10px; color: red;" *ngIf="form.controls['userfullname'].touched && !form.controls['userfullname'].valid">                                                                          
+                                    <span *ngIf="form.controls['userfullname'].hasError('required') ">  
+                                      Please enter full name.
+                                    </span> 
+                                    <span *ngIf="form.controls['userfullname'].hasError('minlength') ">  
+                                        Full name min length is 6.  
+                                    </span>  
+                                    <span *ngIf="form.controls['userfullname'].hasError('maxlength') ">  
+                                      Full name max length is 250.  
+                                   </span>                                                                                                                       
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                        <input type="text" formControlName='username' class="form-control" placeholder="Username">
+                                    </div>
+                                    <div style="font-size: 10px; color: red;" *ngIf="form.controls['username'].touched && !form.controls['username'].valid">                                                                          
+                                        <span *ngIf="form.controls['username'].hasError('required') ">  
+                                          Please enter user name.
+                                        </span> 
+                                        <span *ngIf="form.controls['username'].hasError('minlength') ">  
+                                            User name min length is 6.  
+                                        </span>  
+                                        <span *ngIf="form.controls['username'].hasError('maxlength') ">  
+                                          User name max length is 256.  
+                                       </span>                                                                                                                       
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-phone"></i></span>
+                                            <input type="text" formControlName='phonenumber' class="form-control" placeholder="Phone number">
+                                        </div>
+                                        <div style="font-size: 10px; color: red;" *ngIf="form.controls['phonenumber'].touched && !form.controls['phonenumber'].valid">                                                                          
+                                            <span *ngIf="form.controls['phonenumber'].hasError('required') ">  
+                                              Please enter phone number.
+                                            </span> 
+                                            <span *ngIf="form.controls['phonenumber'].hasError('pattern') ">  
+                                                Enter only numbers.
+                                            </span> 
+                                            <span *ngIf="form.controls['phonenumber'].hasError('minlength') ">  
+                                               Phone number min length is 10.  
+                                                </span>  
+                                                <span *ngIf="form.controls['phonenumber'].hasError('maxlength') ">  
+                                                  Phone number max length is 10.  
+                                               </span>                                                                                                                      
+                                        </div>
+                                    </div>
+                                                                      
+                              <button type="submit" class="btn btn-primary">
+                                Register
+                                <i class="fa fa-user"></i>
+                              </button>
+                        </form>
+                          
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                      <!-- spaces for the ads -->
+                      <app-ads-register></app-ads-register>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
     </div>
-</div>
