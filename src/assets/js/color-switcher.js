@@ -17,7 +17,8 @@ $(document).ready(function() {
   
   //background & colour switch
   $('.switcher a').click(function() {
-    var c = $(this).attr('href').replace('#','');
+    // var c = $(this).attr('href').replace('#','');
+    var c = $(this).attr('data-color').replace('#','');
     
     //colours
     if ($(this).hasClass('colour')) {
