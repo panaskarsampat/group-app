@@ -64,6 +64,8 @@ import { PlansTextComponent } from './content/plans/plans-text/plans-text.compon
 import { AdsAboutusComponent } from './content/plans/plans-text/ads-aboutus/ads-aboutus.component';
 import { BlockquoteComponent } from './content/testimonials/blockquote/blockquote.component';
 import { LatestInvolvementComponent } from './content/testimonials/latest-involvement/latest-involvement.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -127,7 +129,9 @@ import { LatestInvolvementComponent } from './content/testimonials/latest-involv
     PlansTextComponent,
     AdsAboutusComponent,
     BlockquoteComponent,
-    LatestInvolvementComponent
+    LatestInvolvementComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

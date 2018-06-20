@@ -1621,6 +1621,8 @@ a.btn-hh-trigger.target-open:after {
 }
 #highlighted {
   color: #ffffff;
+  background-image: url(../img/backgrounds/buildings.png);
+  height: auto;  
 }
 #content {  
   background: #ffffff;
