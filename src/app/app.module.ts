@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routing';
+import { DataService } from './data.service';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderHiddenComponent } from './navigation/header-hidden/header-hidden.component';
@@ -70,6 +73,7 @@ import { RegisterComponent } from './register/register.component';
 import { AdsLoginComponent } from './login/ads-login/ads-login.component';
 import { AdsRegisterComponent } from './register/ads-register/ads-register.component';
 
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -140,12 +144,14 @@ import { AdsRegisterComponent } from './register/ads-register/ads-register.compo
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
     RouterModule.forRoot(appRoutes)    
   ],
-  providers: [],
+  providers: [LoginService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,11 +3,16 @@
     <a class="btn btn-primary btn-hh-trigger" role="button" data-toggle="collapse" data-target=".header-hidden">Open</a>
   </li>
 </ul>
-<ul class="list-inline user-menu pull-right">
+<ul class="list-inline user-menu pull-right" *ngIf="!isLoggedUser">
   <li class="user-register">
     <i class="fa fa-edit text-primary "></i> <a routerLink="register" class="text-uppercase">Register</a>
   </li>
   <li class="user-login">
     <i class="fa fa-sign-in text-primary"></i> <a routerLink="login" class="text-uppercase">Login</a>
   </li>
+</ul>
+
+<ul class="list-inline user-menu pull-right" *ngIf="isLoggedUser">
+    <li class="user-register"><i class="fa fa-user text-primary "></i> <a routerLink="userdashboard" class="text-uppercase">{{loggedUser?.UserName}}</a></li>
+    <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a [routerLink]="" class="text-uppercase">Logout</a></li>
 </ul>

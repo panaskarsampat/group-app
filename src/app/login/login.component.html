@@ -46,6 +46,15 @@
                             Login 
                             <i class="fa fa-key"></i>
                           </button>
+                          <div class="alert alert-info" *ngIf="isInfo">
+                              <button type="button" class="close" data-dismiss="alert">×</button>
+                              <h4>
+                                Information
+                              </h4>
+                              <div style="font-size: 14px;">
+                                  {{ infoMessage }}  
+                              </div>
+                          </div>
                     </form>
                       
                   </div>
@@ -55,19 +64,19 @@
                         Forgot Password
                       </h3>
                   <div class="stat">
-                      <form [formGroup]="form" (ngSubmit)="forgotPassword(form)">
+                      <form [formGroup]="formForgot" (ngSubmit)="forgotPassword(formForgot)">
                           <div class="form-group">
                               <div class="input-group input-group-lg">
                                 <span class="input-group-addon"><i class="fa fa-fw fa-envelope"></i></span>
                                 <input type="text" formControlName='forgotEmail' class="form-control" placeholder="Email">
                                 
                               </div>
-                              <div style="font-size: 10px; color: red;" *ngIf="form.controls['forgotEmail'].touched && !form.controls['forgotEmail'].valid">                                                                          
-                                  <span *ngIf="form.controls['forgotEmail'].hasError('required') ">  
+                              <div style="font-size: 10px; color: red;" *ngIf="formForgot.controls['forgotEmail'].touched && !formForgot.controls['forgotEmail'].valid">                                                                          
+                                  <span *ngIf="formForgot.controls['forgotEmail'].hasError('required') ">  
                                     Please enter email id.
                                   </span>  
                                        
-                                 <span *ngIf="form.controls['forgotEmail'].hasError('email') ">  
+                                 <span *ngIf="formForgot.controls['forgotEmail'].hasError('email') ">  
                                     Invalid email id.
                                   </span>                                                                                
                               </div>
