@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
 
 import { RegisterModels } from '../../../register/register-models';
 import { DataService } from '../../../data.service';
@@ -14,7 +16,7 @@ export class HeaderLinkmenusComponent implements OnInit {
   subscription: Subscription;
   isLoggedUser:boolean=false;
 
-  constructor(private ds: DataService) {
+  constructor(private ds: DataService, private spinner: NgxSpinnerService, private router:Router) {
     // subscribe to home component messages
     this.subscription = this.ds.getData().subscribe(x => {
       this.loggedUser=x;      
@@ -26,12 +28,18 @@ export class HeaderLinkmenusComponent implements OnInit {
     
   }
 
+  logout(){
+    this.spinner.show();
+    setTimeout(() => {
+      this.ds.clearData();
+      this.isLoggedUser=false;   
+      this.spinner.hide();    
+    }, 1000);
+    this.router.navigate(['/home']);
+  }
+
   ngOnDestroy() {
     // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();
-  }
-
-  
-  
-  
+  } 
 }
