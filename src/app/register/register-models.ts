@@ -1,4 +1,5 @@
 export class RegisterModels {
+    UserId:Number;
     UserEmail:string;
     UserFullName:string;
     UserName:string;

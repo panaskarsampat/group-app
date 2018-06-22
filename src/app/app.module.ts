@@ -74,6 +74,10 @@ import { AdsLoginComponent } from './login/ads-login/ads-login.component';
 import { AdsRegisterComponent } from './register/ads-register/ads-register.component';
 
 import { LoginService } from './login/login.service';
+import { RegisterService } from './register/register.service';
+
+import { RegisterModels } from './register/register-models';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -140,7 +144,8 @@ import { LoginService } from './login/login.service';
     LoginComponent,
     RegisterComponent,
     AdsLoginComponent,
-    AdsRegisterComponent
+    AdsRegisterComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -151,7 +156,7 @@ import { LoginService } from './login/login.service';
     NgxSpinnerModule,
     RouterModule.forRoot(appRoutes)    
   ],
-  providers: [LoginService, DataService],
+  providers: [LoginService, DataService, RegisterService, RegisterModels],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
