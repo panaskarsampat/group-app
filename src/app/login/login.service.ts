@@ -18,4 +18,8 @@ export class LoginService {
   getLoginByEmailPassword(email){
     return this.http.get<RegisterModels>(this.loginUrl+email);
   }
+
+  forgotPassword(email){       
+    return this.http.get<boolean>(environment.ROOT_URL+'ForgotPassword/'+email);    
+  }
 }

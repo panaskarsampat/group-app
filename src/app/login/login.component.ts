@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormControl,FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { DataService } from './../data.service';
 import { LoginService } from './login.service';
@@ -17,8 +18,11 @@ export class LoginComponent implements OnInit {
   user:RegisterModels;
   isInfo:boolean=false;
   infoMessage:string='';  
+  isSuccess:boolean=false;
+  isInfoForgot:boolean=false;
+  infoMessageForgot:string='';
   
-  constructor(private fb: FormBuilder, private loginService:LoginService, private ds: DataService) { 
+  constructor(private fb: FormBuilder, private loginService:LoginService, private ds: DataService, private spinner: NgxSpinnerService) { 
     this.form  = this.fb.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -45,32 +49,60 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(lgnForm:NgForm){     
-    
-    if(lgnForm.status==='VALID'){
-      this.isInfo=false;
+    this.spinner.show();
+    this.isInfo=false;
+    this.isSuccess=false;
+
+    setTimeout(() => {
       this.loginService.getLoginByEmailPassword(lgnForm.value.email).subscribe(
         us => {                  
           this.user = us;
           
           if(this.user.PasswordHash !== lgnForm.value.password) {
             this.isInfo=true;
-            this.infoMessage="Incorrect Password."
+            this.infoMessage="Incorrect Password.";
           }else{
-            this.ds.sendData(this.user);    
+            this.ds.sendData(this.user);
+            this.form.reset(); 
+            this.isSuccess=true;            
           }        
+          this.spinner.hide();
         },
         err => {        
           this.isInfo=true;
-          this.infoMessage="Invalid Email Id."
-          console.log(err);        
+          this.infoMessage="Invalid Email Id.";    
+          this.spinner.hide();     
         }
       );
-    }
-    //console.log(lgnForm);    
+    }, 1000);      
   }
 
   forgotPassword(frgForm:NgForm){
-    console.log(frgForm);
+    this.spinner.show();
+    this.isInfoForgot=false;
+    
+    setTimeout(() => {
+      this.loginService.forgotPassword(frgForm.value.forgotEmail).subscribe(
+        us => {                  
+                    
+          if(us) {
+            this.isInfoForgot=true;
+            this.infoMessageForgot="Password sent on the registred email id.";
+            this.form.reset(); 
+          }else{            
+            
+            this.isInfoForgot=true;
+            this.infoMessageForgot="User email id incorrect.";                        
+          }        
+          this.spinner.hide();
+        },
+        err => {        
+          this.isInfoForgot=true;
+          this.infoMessageForgot="Invalid Email Id.";    
+          this.spinner.hide();     
+        }
+      );
+    }, 1000);
   }
 
   

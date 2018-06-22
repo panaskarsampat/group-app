@@ -17,8 +17,7 @@ export class HeaderLinkmenusComponent implements OnInit {
   constructor(private ds: DataService) {
     // subscribe to home component messages
     this.subscription = this.ds.getData().subscribe(x => {
-      this.loggedUser=x;
-      console.log(this.loggedUser);
+      this.loggedUser=x;      
       this.isLoggedUser=true;
     });
   }
