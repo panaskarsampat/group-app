@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  registerUser(rgsForm:NgForm){       
+  registerUser(rgsForm){       
     this.spinner.show();
     this.isInfo=false;
     this.isSuccess=false;

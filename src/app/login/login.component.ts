@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormControl,FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormControl,FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 import { DataService } from './../data.service';
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginUser(lgnForm:NgForm){     
+  loginUser(lgnForm){     
     this.spinner.show();
     this.isInfo=false;
     this.isSuccess=false;
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
     }, 1000);      
   }
 
-  forgotPassword(frgForm:NgForm){
+  forgotPassword(frgForm){
     this.spinner.show();
     this.isInfoForgot=false;
     
