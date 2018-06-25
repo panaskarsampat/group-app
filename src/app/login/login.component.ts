@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
           if(us) {
             this.isInfoForgot=true;
             this.infoMessageForgot="Password sent on the registred email id.";
-            this.form.reset(); 
+            this.formForgot.reset(); 
           }else{            
             
             this.isInfoForgot=true;

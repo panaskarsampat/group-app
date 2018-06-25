@@ -78,6 +78,7 @@ import { RegisterService } from './register/register.service';
 
 import { RegisterModels } from './register/register-models';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ActiveUserComponent } from './active.user/active.user.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +146,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     RegisterComponent,
     AdsLoginComponent,
     AdsRegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ActiveUserComponent
   ],
   imports: [
     BrowserModule,

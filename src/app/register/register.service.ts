@@ -42,4 +42,8 @@ export class RegisterService {
     return this._http.put(this.userUrl+id,JSON.stringify(user), this._requestOption).pipe(
     map(x=>x.json()));    
   }
+
+  getUserById(Id){
+    return this.http.get<RegisterModels>(environment.ROOT_URL+'user/'+ Id);
+  }
 }
