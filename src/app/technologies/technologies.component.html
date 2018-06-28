@@ -3,7 +3,7 @@
     <div class="jumbotron">
         <div class="row">
           <div class="col-xs-4 col-sm-2" *ngFor="let tech of technologieslist | slice : startPage:paginationLimit" style="padding-bottom: 20px; padding-top: 10px; padding-left: 20px;">
-            <a [routerLink]="['../articales',tech.TechnologiesId]" class="overlay-wrapper">
+            <a [routerLink]="['../techlists',tech.TechnologiesId]" class="overlay-wrapper">
               <img style="text-align: center;" src="{{tech.TechnologiesIcon}}" alt="{{tech.TechnologiesName}}" class="img-responsive underlay">
               <span class="overlay">
                 <span class="overlay-content"> <span class="h6">{{tech.TechnologiesName}}</span> </span>

@@ -76,14 +76,30 @@ import { AdsRegisterComponent } from './register/ads-register/ads-register.compo
 import { LoginService } from './login/login.service';
 import { RegisterService } from './register/register.service';
 import { TechnologiesService } from './technologies/technologies.service';
-
+import { PostsService } from './posts/posts.service';
 import { RegisterModels } from './register/register-models';
 import { TechnologiesModels } from './technologies/technologies-models';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ActiveUserComponent } from './active.user/active.user.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
-import { ArticalesComponent } from './articales/articales.component';
+import { ContributeComponent } from './contribute/contribute.component';
+import { ContributeHeaderComponent } from './contribute/contribute-header/contribute-header.component';
+import { RecentPostsComponent } from './contribute/recent-posts/recent-posts.component';
+import { TechnologiesPostsComponent } from './technologies/technologies-lists/technologies-posts/technologies-posts.component';
+import { TechnologiesHeaderComponent } from './technologies/technologies-lists/technologies-header/technologies-header.component';
+import { TechnologiesCountsComponent } from './technologies/technologies-lists/technologies-counts/technologies-counts.component';
+import { TechnologiesListsComponent } from './technologies/technologies-lists/technologies-lists.component';
+import { ArticalesCountsComponent } from './technologies/technologies-lists/technologies-counts/articales-counts/articales-counts.component';
+import { BlogsCountsComponent } from './technologies/technologies-lists/technologies-counts/blogs-counts/blogs-counts.component';
+import { ResourcesCountsComponent } from './technologies/technologies-lists/technologies-counts/resources-counts/resources-counts.component';
+import { NewsCountsComponent } from './technologies/technologies-lists/technologies-counts/news-counts/news-counts.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostsDetailsComponent } from './posts/posts-details/posts-details.component';
+import { PostsDetailsCountsComponent } from './posts/posts-details/posts-details-counts/posts-details-counts.component';
+import { LikesComponent } from './posts/posts-details/posts-details-counts/likes/likes.component';
+import { CommentsComponent } from './posts/posts-details/posts-details-counts/comments/comments.component';
+import { ViewsComponent } from './posts/posts-details/posts-details-counts/views/views.component';
 
 @NgModule({
   declarations: [
@@ -154,7 +170,23 @@ import { ArticalesComponent } from './articales/articales.component';
     UserProfileComponent,
     ActiveUserComponent,
     TechnologiesComponent,
-    ArticalesComponent
+    ContributeComponent,    
+    ContributeHeaderComponent,
+    RecentPostsComponent,
+    TechnologiesPostsComponent,
+    TechnologiesHeaderComponent,
+    TechnologiesCountsComponent,    
+    TechnologiesListsComponent,
+    ArticalesCountsComponent,
+    BlogsCountsComponent,
+    ResourcesCountsComponent,
+    NewsCountsComponent,
+    PostsComponent,
+    PostsDetailsComponent,
+    PostsDetailsCountsComponent,
+    LikesComponent,
+    CommentsComponent,
+    ViewsComponent
   ],
   imports: [
     BrowserModule,
@@ -165,7 +197,8 @@ import { ArticalesComponent } from './articales/articales.component';
     NgxSpinnerModule,
     RouterModule.forRoot(appRoutes)    
   ],
-  providers: [LoginService, DataService, RegisterService, RegisterModels, TechnologiesService, TechnologiesModels],
+  providers: [LoginService, DataService, RegisterService, RegisterModels, 
+    TechnologiesService, TechnologiesModels, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

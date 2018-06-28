@@ -1,0 +1,18 @@
+<div id="content">
+    <div class="container" id="about">
+      <div class="row">
+          <div class="block-highlight block-pd-h block-pd-sm">
+            <app-technologies-header [techId]=techId></app-technologies-header>
+  
+            <div class="row">
+              <app-technologies-counts [techId]=techId></app-technologies-counts>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 blog-roll">
+          <app-posts [techId]=techId></app-posts>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import { ActivatedRoute, Params} from '@angular/router';
 
 import { RegisterModels } from '../register/register-models';
 import { RegisterService } from '../register/register.service';
