@@ -78,6 +78,7 @@ import { RegisterService } from './register/register.service';
 import { TechnologiesService } from './technologies/technologies.service';
 import { PostsService } from './posts/posts.service';
 import { RegisterModels } from './register/register-models';
+import { ViewsModels } from './posts/posts-details/posts-details-counts/views/views-models';
 import { TechnologiesModels } from './technologies/technologies-models';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -197,7 +198,7 @@ import { ViewsComponent } from './posts/posts-details/posts-details-counts/views
     NgxSpinnerModule,
     RouterModule.forRoot(appRoutes)    
   ],
-  providers: [LoginService, DataService, RegisterService, RegisterModels, 
+  providers: [LoginService, DataService, RegisterService, RegisterModels, ViewsModels,
     TechnologiesService, TechnologiesModels, PostsService],
   bootstrap: [AppComponent]
 })

@@ -7,9 +7,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ActiveUserComponent } from './active.user/active.user.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { ContributeComponent } from './contribute/contribute.component';
-import { TechnologiesPostsComponent } from './technologies/technologies-lists/technologies-posts/technologies-posts.component';
-import { TechnologiesHeaderComponent } from './technologies/technologies-lists/technologies-header/technologies-header.component';
-import { TechnologiesCountsComponent } from './technologies/technologies-lists/technologies-counts/technologies-counts.component';
+import { PostsDetailsComponent } from './posts/posts-details/posts-details.component';
 import { TechnologiesListsComponent } from './technologies/technologies-lists/technologies-lists.component';
 
 export const appRoutes : Routes=[
@@ -19,6 +17,7 @@ export const appRoutes : Routes=[
     { path:'user-profile', component:UserProfileComponent },
     { path:'activeuser/:userId', component:ActiveUserComponent },
     { path:'techlists/:techId', component:TechnologiesListsComponent },
+    { path:'postdetails/:articlesId/:typeId', component:PostsDetailsComponent },
     { path:'technologies', component:TechnologiesComponent },
     { path:'**', component:HomeComponent }
 ];

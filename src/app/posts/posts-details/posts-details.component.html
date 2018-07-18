@@ -1,3 +1,57 @@
-<p>
-  posts-details works!
-</p>
+<div id="content">
+    <div class="container" id="about">
+      <div class="row">
+          <div class="block-highlight block-pd-h block-pd-sm">
+              <h3 class="block-title">
+                  {{articale?.ArticlesSubject}}
+              </h3>
+              <!-- <div class="col-sm-1">
+                  <img src="{{technologies?.TechnologiesIcon}}" class="img-responsive underlay">
+              </div> -->
+              <div class="col-sm-12">
+                  <p class="text-fancy">{{articale?.ArticlesDesc}}</p>
+              </div>
+              <div class="row">
+                  <!--Client logos should be within a 120px wide by 60px height image canvas-->
+                  <div class="col-xs-4">
+                      <span><i class="fa fa-user"></i> {{articale?.Email}}</span>                      
+                  </div>
+                  <div class="col-xs-4">
+                      <span><i class="fa fa-calendar"></i> {{articale?.CreatedDateTime | date:'dd-MMM-yyy HH:mm a '}}</span>                      
+                  </div>
+                  <div class="col-xs-2" [ngSwitch]="articale?.TypeId">
+                      <span *ngSwitchCase="1"><i class="fa fa-bookmark"></i> Articales </span>
+                      <span *ngSwitchCase="2"><i class="fa fa-comments"></i> Blogs </span>
+                      <span *ngSwitchCase="3"><i class="fa fa-crosshairs"></i> Resources </span>
+                      <span *ngSwitchCase="4"><i class="fa fa-desktop"></i> Videos </span>
+                      <span *ngSwitchCase="5"><i class="fa fa-newspaper-o"></i> News </span>                                            
+                  </div>
+                                                      
+              </div>
+              <br>
+              <div class="row">
+                 <app-posts-details-counts [articalesId]="articlesId" [typeId]="typeId"></app-posts-details-counts>                                    
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-8 blog-roll">
+              <h3 class="block-title">
+                  Introduction
+                </h3>
+              <!-- Blog post 1-->
+              <div class="media">
+                
+                <div class="media-body">
+                    <!-- <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent">articale?.ArticlesContents</app-ngx-editor> -->
+                    <!-- {{articale?.ArticlesContents}}                                                                                            -->
+                    <div [innerHTML]="articale?.ArticlesContents"></div>
+                  </div>
+              </div>
+              <!-- Blog post 2 -->
+              
+            </div>
+      </div>
+      <!-- <app-comments [commentsList]="commentslist"></app-comments> -->
+    </div>
+</div>

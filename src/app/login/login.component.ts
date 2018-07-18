@@ -64,7 +64,8 @@ export class LoginComponent implements OnInit {
           }else{
             this.ds.sendData(this.user);
             this.form.reset(); 
-            this.isSuccess=true;            
+            this.isSuccess=true;    
+            localStorage.setItem("loggedUserId",this.user.UserId.toString());        
           }        
           this.spinner.hide();
         },
@@ -103,7 +104,5 @@ export class LoginComponent implements OnInit {
         }
       );
     }, 1000);
-  }
-
-  
+  }  
 }

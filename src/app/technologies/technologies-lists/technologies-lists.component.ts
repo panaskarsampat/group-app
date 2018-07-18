@@ -9,7 +9,7 @@ import { ActivatedRoute, Params} from '@angular/router';
 export class TechnologiesListsComponent implements OnInit {
   techId:number;
   
-  constructor(private activatedRoute : ActivatedRoute,) { }
+  constructor(private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
