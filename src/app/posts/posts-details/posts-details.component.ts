@@ -16,6 +16,7 @@ export class PostsDetailsComponent implements OnInit {
   typeId:number;
   userId:string;
   articale:PostsModels;
+  emailId:string="";
 
   constructor(private activatedRoute : ActivatedRoute,private loggedUser:RegisterModels, private postsService:PostsService, private ds: DataService) { 
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -29,7 +30,9 @@ export class PostsDetailsComponent implements OnInit {
     });
 
     if(this.ds.getUser()!=undefined){
-      this.loggedUser = this.ds.getUser();               
+      
+      this.loggedUser = this.ds.getUser();  
+      this.emailId=this.loggedUser.UserEmail;             
     }
   }
 

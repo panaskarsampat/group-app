@@ -80,6 +80,7 @@ import { PostsService } from './posts/posts.service';
 import { RegisterModels } from './register/register-models';
 import { ViewsModels } from './posts/posts-details/posts-details-counts/views/views-models';
 import { LikesModels } from './posts/posts-details/posts-details-counts/likes/likes-models';
+import { CommentsModels } from './posts/posts-details/posts-details-counts/comments/comments-models';
 import { TechnologiesModels } from './technologies/technologies-models';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -204,7 +205,7 @@ import { AddCommentsComponent } from './posts/posts-details/posts-details-counts
     RouterModule.forRoot(appRoutes)    
   ],
   providers: [LoginService, DataService, RegisterService, RegisterModels, ViewsModels,
-    TechnologiesService, TechnologiesModels, PostsService, LikesModels],
+    TechnologiesService, TechnologiesModels, PostsService, LikesModels, CommentsModels],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

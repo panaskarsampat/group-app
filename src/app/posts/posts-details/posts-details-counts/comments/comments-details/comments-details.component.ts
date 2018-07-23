@@ -10,10 +10,12 @@ import { CommentsModels } from '../comments-models';
 })
 export class CommentsDetailsComponent implements OnInit {
   @Input() articalesId:number;
+  @Input()  emailId:string;
+  
   commentsList:CommentsModels[];
   startPage : Number;
   paginationLimit:Number;
-
+  
   constructor(private commentsdataService:CommentsService) { }
 
   loadCommentsDetails(){    
@@ -33,6 +35,10 @@ export class CommentsDetailsComponent implements OnInit {
   showMoreItems()
   {     
     this.paginationLimit = Number(this.paginationLimit) + 3;        
+  }
+
+  receiveMessage($event) {
+    this.loadCommentsDetails();
   }
 
   ngOnInit() {

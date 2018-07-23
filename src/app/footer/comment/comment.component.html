@@ -1,17 +1,54 @@
-<h4 class="text-uppercase">
-  Comment
-</h4>
-<div class="form">
-    <div id="sendmessage">Your message has been sent. Thank you!</div>
-    <div id="errormessage"></div>
-    <div class="form-group">
-        <input type="text" class="form-control" required minlength="4"  name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-        <div class="validation"></div>
+<div class="block-highlight block-pd-h block-pd-sm">
+  <h4 class="text-uppercase">
+    Comment
+  </h4>
+  <form [formGroup]="form" (ngSubmit)="addComments()">
+    <div class="alert alert-info" *ngIf="isInfo">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4>
+        Information
+      </h4>
+      <div style="font-size: 14px;">
+          {{ infoMessage }}  
       </div>
-      <div class="form-group">
-        <textarea class="form-control"  name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-        <div class="validation"></div>
-      </div>
-      <div class="text-center"><button type="submit">Comment</button></div>
-      
   </div>
+  <div class="alert alert-success" *ngIf="isSuccess">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4>
+          Success
+        </h4>
+        <div style="font-size: 14px;">
+            User Comment added Successfully!
+        </div> 
+  </div>
+      <div class="form-group">
+          <input type="text" class="form-control" formControlName='commentsubject' placeholder="Subject" />
+          <div style="font-size: 10px; color: red;" *ngIf="form.controls['commentsubject'].touched && !form.controls['commentsubject'].valid">                                                                          
+            <span *ngIf="form.controls['commentsubject'].hasError('required') ">  
+              Please enter Comment Subject.
+            </span> 
+            <span *ngIf="form.controls['commentsubject'].hasError('minlength') ">  
+                Comment Subject min length is 8.  
+            </span>  
+            <span *ngIf="form.controls['commentsubject'].hasError('maxlength') ">  
+              Comment Subject max length is 250.  
+           </span>                                                                                                                       
+        </div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" placeholder="Message" formControlName='commenttext'></textarea>
+          <div style="font-size: 10px; color: red;" *ngIf="form.controls['commenttext'].touched && !form.controls['commenttext'].valid">                                                                          
+            <span *ngIf="form.controls['commenttext'].hasError('required') ">  
+              Please enter Comment.
+            </span> 
+                                                                                                                                 
+          </div>
+        </div>
+        <!-- <div class="text-center"><button type="submit">Comment</button></div> -->
+        
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+          Comment
+          <i class="fa fa-comments"></i>
+        </button>
+    </form>
+</div>
