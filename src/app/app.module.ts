@@ -79,6 +79,7 @@ import { TechnologiesService } from './technologies/technologies.service';
 import { PostsService } from './posts/posts.service';
 import { RegisterModels } from './register/register-models';
 import { ViewsModels } from './posts/posts-details/posts-details-counts/views/views-models';
+import { LikesModels } from './posts/posts-details/posts-details-counts/likes/likes-models';
 import { TechnologiesModels } from './technologies/technologies-models';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -101,6 +102,8 @@ import { PostsDetailsCountsComponent } from './posts/posts-details/posts-details
 import { LikesComponent } from './posts/posts-details/posts-details-counts/likes/likes.component';
 import { CommentsComponent } from './posts/posts-details/posts-details-counts/comments/comments.component';
 import { ViewsComponent } from './posts/posts-details/posts-details-counts/views/views.component';
+import { CommentsDetailsComponent } from './posts/posts-details/posts-details-counts/comments/comments-details/comments-details.component';
+import { AddCommentsComponent } from './posts/posts-details/posts-details-counts/comments/comments-details/add-comments/add-comments.component';
 
 @NgModule({
   declarations: [
@@ -187,7 +190,9 @@ import { ViewsComponent } from './posts/posts-details/posts-details-counts/views
     PostsDetailsCountsComponent,
     LikesComponent,
     CommentsComponent,
-    ViewsComponent
+    ViewsComponent,
+    CommentsDetailsComponent,
+    AddCommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -199,7 +204,7 @@ import { ViewsComponent } from './posts/posts-details/posts-details-counts/views
     RouterModule.forRoot(appRoutes)    
   ],
   providers: [LoginService, DataService, RegisterService, RegisterModels, ViewsModels,
-    TechnologiesService, TechnologiesModels, PostsService],
+    TechnologiesService, TechnologiesModels, PostsService, LikesModels],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-8 blog-roll">
+      <h3 class="block-title">
+          RECENT COMMENTS
+        </h3>
+      <!-- Blog post 1-->
+      <div class="media" *ngFor="let comment of commentsList | slice : startPage:paginationLimit">
+        <div class="media-left hidden-xs">
+          <!-- Date desktop -->
+          <div class="date-wrapper"> <span class="date-m">{{comment.CreatedDateTime | date: 'MMM'}}</span> <span class="date-d">{{comment.CreatedDateTime | date: 'dd'}}</span> </div>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">
+              <a [routerLink]="" class="text-weight-strong">{{comment.Email}}</a>
+            </h4>
+          <!-- Meta details mobile -->
+          <ul class="list-inline meta text-muted visible-xs">
+            <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> {{comment.CreatedDateTime | date:'dd-MMM-yyy HH:mm a '}}</li>
+            <li><i class="fa fa-user"></i> <a href="#">{{comment.Email}}</a></li>
+          </ul>
+          <p>
+              {{comment.Comment}}              
+          </p>
+          <!-- <app-subcomments [commentId]="comment.CommentId"></app-subcomments> -->
+        </div>
+      </div>
+      <!-- Blog post 2 -->
+      <a [routerLink]="" (click)="showMoreItems()" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+    </div>
+    
+</div>
+<br>
