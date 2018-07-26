@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgxEditorModule } from 'ngx-editor';
+import { ClickEventService } from './contribute/click-event.service';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routing';
 import { DataService } from './data.service';
@@ -82,6 +84,7 @@ import { ViewsModels } from './posts/posts-details/posts-details-counts/views/vi
 import { LikesModels } from './posts/posts-details/posts-details-counts/likes/likes-models';
 import { CommentsModels } from './posts/posts-details/posts-details-counts/comments/comments-models';
 import { TechnologiesModels } from './technologies/technologies-models';
+import { ContributeModels } from "./contribute/contribute-models";
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ActiveUserComponent } from './active.user/active.user.component';
@@ -105,6 +108,7 @@ import { CommentsComponent } from './posts/posts-details/posts-details-counts/co
 import { ViewsComponent } from './posts/posts-details/posts-details-counts/views/views.component';
 import { CommentsDetailsComponent } from './posts/posts-details/posts-details-counts/comments/comments-details/comments-details.component';
 import { AddCommentsComponent } from './posts/posts-details/posts-details-counts/comments/comments-details/add-comments/add-comments.component';
+import { AddContributeComponent } from './contribute/add-contribute/add-contribute.component';
 
 @NgModule({
   declarations: [
@@ -193,7 +197,8 @@ import { AddCommentsComponent } from './posts/posts-details/posts-details-counts
     CommentsComponent,
     ViewsComponent,
     CommentsDetailsComponent,
-    AddCommentsComponent
+    AddCommentsComponent,
+    AddContributeComponent
   ],
   imports: [
     BrowserModule,
@@ -201,11 +206,12 @@ import { AddCommentsComponent } from './posts/posts-details/posts-details-counts
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule,
+    NgxSpinnerModule, NgxEditorModule,
     RouterModule.forRoot(appRoutes)    
   ],
   providers: [LoginService, DataService, RegisterService, RegisterModels, ViewsModels,
-    TechnologiesService, TechnologiesModels, PostsService, LikesModels, CommentsModels],
+    TechnologiesService, TechnologiesModels, PostsService, LikesModels, CommentsModels,
+    ContributeModels, ClickEventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

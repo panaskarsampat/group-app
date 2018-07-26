@@ -41,8 +41,7 @@ export class CommentComponent implements OnInit {
   addComments(){
     this.spinner.show();
     this.isInfo=false;
-    this.isSuccess=false;
-    debugger;
+    this.isSuccess=false;    
     this.comment.CommentOn="";
     this.comment.CommentOnId=this.articalesId;
     this.comment.Subject=this.form.value.commentsubject;

@@ -30,7 +30,7 @@ export class TechnologiesCountsComponent implements OnInit {
         this.articalesCounts = this.articalesLists.filter(a=>a.TypeId==1 && a.TechnologiesId==this.techId).length;
         this.blogsCounts = this.articalesLists.filter(a=>a.TypeId==2 && a.TechnologiesId==this.techId).length;
         this.resourcesCounts = this.articalesLists.filter(a=>a.TypeId==3 && a.TechnologiesId==this.techId).length;
-        this.newsCounts = this.articalesLists.filter(a=>a.TypeId==4 && a.TechnologiesId==this.techId).length;
+        this.newsCounts = this.articalesLists.filter(a=>a.TypeId==5 && a.TechnologiesId==this.techId).length;
         
       },
       err => {

@@ -18,6 +18,7 @@ export const appRoutes : Routes=[
     { path:'activeuser/:userId', component:ActiveUserComponent },
     { path:'techlists/:techId', component:TechnologiesListsComponent },
     { path:'postdetails/:articlesId/:typeId', component:PostsDetailsComponent },
+    { path:'contribute/:typeId', component:ContributeComponent },
     { path:'technologies', component:TechnologiesComponent },
     { path:'**', component:HomeComponent }
 ];

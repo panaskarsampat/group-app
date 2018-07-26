@@ -2,16 +2,22 @@
   <div class="container" id="about">
     <div class="row">
         <div class="block-highlight block-pd-h block-pd-sm">
-          <app-contribute-header></app-contribute-header>
-
+          <app-contribute-header [typeId]="typeId"></app-contribute-header>
           <div class="row">
-            
+            <div class="col-xs-3 col-md-2">
+                <a [routerLink]="" class="btn btn-more large i-right" (click)="showHideWrite()" > Write New <i class="fa fa-plus"></i></a>                    
+            </div>               
+          </div>
+          <div class="row">
+              <div [hidden]="!isShowWrite">
+                  <app-add-contribute [typeId]="typeId" [loggedEmailId]="loggedEmailId"></app-add-contribute>
+              </div>            
           </div>
         </div>
     </div>
     <div class="row">
       <div class="col-md-8 blog-roll">
-        <app-recent-posts></app-recent-posts>
+        <app-recent-posts [typeId]="typeId" [loggedEmailId]="loggedEmailId"></app-recent-posts>
       </div>
     </div>
   </div>

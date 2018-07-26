@@ -1,0 +1,112 @@
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <br>
+            <div class="col-md-11">
+                
+              <div class="stat">
+                <form [formGroup]="form" (ngSubmit)="insertContribute()">
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"> Technologies </span>
+                            <select class="form-control" formControlName='technologiesSelect'> 
+                                <!-- <option value="0" disabled>-- Select --</option> -->
+                                <option *ngFor="let item of technologieslist" value={{item.TechnologiesId}}>
+                                    {{item.TechnologiesName}}
+                                </option>
+                          </select>                              
+                        </div>
+                        <div style="font-size: 10px; color: red;" *ngIf="form.controls['technologiesSelect'].touched && !form.controls['technologiesSelect'].valid">                                                                          
+                            <span *ngIf="form.controls['technologiesSelect'].hasError('required') ">  
+                              Please select technologies.
+                            </span>                                                                                                                                            
+                        </div>
+                       
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"> Subject </span>
+                            <input type="text" formControlName='subject' class="form-control" placeholder="Subject">
+                        </div>
+                        <div style="font-size: 10px; color: red;" *ngIf="form.controls['subject'].touched && !form.controls['subject'].valid">                                                                          
+                            <span *ngIf="form.controls['subject'].hasError('required') ">  
+                              Please enter subject line.
+                            </span> 
+                            <span *ngIf="form.controls['subject'].hasError('minlength') ">  
+                                Subject line min length is 6.  
+                            </span>  
+                            <span *ngIf="form.controls['subject'].hasError('maxlength') ">  
+                              Subject line max length is 250.  
+                           </span>                                                                                                                       
+                        </div>
+                      </div>
+                      <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon"> Description </span>
+                                <input type="text" formControlName='description' class="form-control" placeholder="Description">
+                            </div>
+                            <div style="font-size: 10px; color: red;" *ngIf="form.controls['description'].touched && !form.controls['description'].valid">                                                                          
+                                <span *ngIf="form.controls['description'].hasError('required') ">  
+                                  Please enter description.
+                                </span> 
+                                                                                                                                                      
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <app-ngx-editor formControlName='articaleContent' height="200px" minHeight="100px" style="font-size: 20px;" [placeholder]="'Enter contents here...'" [spellcheck]="true"></app-ngx-editor>                                
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <div class="checkbox">
+                                    <label style="font-size: 14px;">
+                                      <input name="ispublic" type="checkbox" value="Is Public Show" formControlName='isPublic'>
+                                      <span> Is Public Show </span> 
+                                    </label>
+                                </div>  
+                              
+                            </div> 
+                            <div class="col-sm-2">
+                                <div class="checkbox">
+                                    <label style="font-size: 14px;">
+                                      <input name="isfriend" type="checkbox" value="Is Friend Show" formControlName='isFriends'>
+                                      <span> Is Friend Show </span> 
+                                    </label>
+                                </div>  
+                               
+                            </div>
+                        </div>
+                                                          
+                      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+                        Save
+                        <i class="fa fa-plus-circle"></i>
+                      </button>
+                      <div class="alert alert-info" *ngIf="isInfo">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <h4>
+                              Information
+                            </h4>
+                            <div style="font-size: 14px;">
+                                {{ infoMessage }}  
+                            </div>
+                        </div>
+                        <div class="alert alert-success" *ngIf="isSuccess">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <h4>
+                                Success
+                              </h4>
+                              <div style="font-size: 14px;">
+                                  New Contribute Created Successfully!
+                              </div> 
+                          </div>
+                </form>
+                  
+              </div>
+            </div>
+            
+            <div class="col-md-8">
+              <!-- spaces for the ads -->
+              <app-ads-register></app-ads-register>
+            </div>
+          </div>        
+    </div>
+</div>
