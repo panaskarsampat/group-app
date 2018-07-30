@@ -50,10 +50,12 @@ export class RecentPostsComponent implements OnInit, OnChanges {
     else{
       this.isLoggedUser=false;
     }
+    this.clickeventService.currentMessage.subscribe(msg=>this.getArticaleByTypeId());
   }
   
   ngOnChanges(){
-    this.getArticaleByTypeId();    
+    this.getArticaleByTypeId();  
+
   }
 
   refreshItems(){

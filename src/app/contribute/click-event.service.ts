@@ -1,14 +1,15 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 export class ClickEventService {
 
-  isRefresh = false;
+  private messageSource = new BehaviorSubject('default message');
+  currentMessage = this.messageSource.asObservable();
+  
+  constructor() { }
 
-  @Output() change: EventEmitter<boolean> = new EventEmitter();
-
-  toggle() {
-    this.isRefresh = !this.isRefresh;
-    this.change.emit(this.isRefresh);
-  }
+  changeMessage(message:string) {       
+    this.messageSource.next(message);    
+  } 
 
 }

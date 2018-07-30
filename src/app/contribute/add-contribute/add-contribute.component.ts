@@ -43,7 +43,7 @@ export class AddContributeComponent implements OnInit {
       isFriends:new FormControl()
     })
   }
-
+    
   getTechnologies(){
     this.techService.getTechnologies().subscribe(
       tech => {
@@ -77,7 +77,7 @@ export class AddContributeComponent implements OnInit {
          this.form.reset(); 
          this.isSuccess=true;   
          this.spinner.hide(); 
-           
+        this.clickeventService.changeMessage('inserevent');
         },
         err=>{        
           this.isInfo=true;
