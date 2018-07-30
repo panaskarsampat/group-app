@@ -1,0 +1,52 @@
+<div class="block-highlight block-pd-h block-pd-sm">
+    <h3 class="block-title">
+       Search Jobs By 
+    </h3>
+    <div class="row">
+      <div class="col-xs-3 col-md-3">
+          <label>Country:</label> 
+          <select class="form-control" [(ngModel)]="selectedCountry" (change)="onCountrySelect($event.target.value)">
+            <option value="0">--Select--</option>
+            <option *ngFor="let country of countrieslist" value= {{country.CountryId}}>{{country.CountryName}}</option>
+          </select>
+      </div>
+      <div class="col-xs-3 col-md-3">
+          <label>State:</label> 
+          <select class="form-control" [(ngModel)]="selectedState" (change)="onStateSelect($event.target.value)">
+            <option value="0">--Select--</option>
+            <option *ngFor="let state of stateslist" value= {{state.StateId}}>{{state.StateName}}</option>
+          </select>
+      </div>
+      <div class="col-xs-3 col-md-3">
+          <label>City:</label> 
+          <select class="form-control" [(ngModel)]="selectedCity">
+            <option value="0">--Select--</option>
+            <option *ngFor="let city of citylist" value= {{city.CityId}}>{{city.CityName}}</option>
+          </select>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-3 col-md-3">
+            <label>Department:</label> 
+            <select class="form-control" [(ngModel)]="selectedPosition">
+              <option value="0">--Select--</option>
+              <option *ngFor="let pos of positionlist" value= {{pos.PositionId}}>{{pos.PositionName}}</option>
+            </select>
+        </div>
+        <div class="col-xs-3 col-md-3">
+            <label>Designation:</label> 
+            <select class="form-control" [(ngModel)]="selectedWork">
+              <option value="0">--Select--</option>
+              <option *ngFor="let work of worklist" value= {{work.WorkId}}>{{work.WorkName}}</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-3 col-md-2">
+            <a [routerLink]="" (click)="searchJobs()" class="btn btn-more large i-right" > Search Jobs <i class="fa fa-search"></i></a>                    
+        </div>               
+    </div>
+    
+</div>

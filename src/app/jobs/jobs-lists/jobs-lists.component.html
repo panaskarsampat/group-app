@@ -1,0 +1,32 @@
+<div class="col-md-8 blog-roll">
+    <h3 class="block-title">
+      RECENTLY POSTED JOBS
+    </h3>
+
+    <!-- Article post 1-->
+    <div class="media" *ngFor="let job of jobslist | slice : startPage:paginationLimit">
+        <div class="media-left hidden-xs">
+          <!-- Date desktop -->
+          <div class="date-wrapper"> <span class="date-m">{{job.CreatedDateTime | date: 'MMM'}}</span> <span class="date-d">{{job.CreatedDateTime | date: 'dd'}}</span> </div>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">
+            <a [routerLink]="['../jobsdetails',job.JobId]" class="text-weight-strong">{{job.JobTitle}}</a>
+          </h4>
+          <h5>
+            <span>Company Name : {{getCompanyName(job.CompanyId)}} | Location : {{getCity(job.LocationCityId)}}, {{getState(job.LocationStateId)}}, {{getCountry(job.LocationCountryId)}} | </span>
+            <span>Designation : {{getDesignation(job.WorkId)}} | Work Experience : {{job.WorkExp}} years</span>
+          </h5>
+          <!-- Meta details mobile -->
+          <ul class="list-inline meta text-muted visible-xs">
+            <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> {{job.CreatedDateTime | date:'dd-MMM-yyy HH:mm a '}}</li>                      
+          </ul>
+          
+        </div>
+      </div>
+      <!-- Article post 2 -->
+      
+      <a [routerLink]="" (click)="showMoreItems()" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+  
+</div>
+

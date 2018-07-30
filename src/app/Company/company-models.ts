@@ -1,0 +1,23 @@
+export class CompanyModels {
+    CompanyId:number;
+    CompanyCode:string;
+    CompanyName:string;
+    CompanyTypeId:number;
+    CompanyCategoryId:number;
+    AboutCompany:string;
+    CompanyAddress:string;
+    CityId:number;
+    StateId:number;
+    CountryId:number;
+    PostalCode:number;
+    PhoneNumber1:number;
+    PhoneNumber2:number;
+    EmailId:string;
+    MailId:string;
+    SiteId:string;
+    IsActive:boolean;
+    CreatedBy:string;
+    CreatedDateTime:Date;
+    ModifiedBy:string;
+    ModifiedDateTime:Date;
+}

@@ -9,6 +9,8 @@ import { TechnologiesComponent } from './technologies/technologies.component';
 import { ContributeComponent } from './contribute/contribute.component';
 import { PostsDetailsComponent } from './posts/posts-details/posts-details.component';
 import { TechnologiesListsComponent } from './technologies/technologies-lists/technologies-lists.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { JobsDetailsComponent } from './jobs/jobs-details/jobs-details.component';
 
 export const appRoutes : Routes=[
     { path:'home', component:HomeComponent },    
@@ -20,5 +22,7 @@ export const appRoutes : Routes=[
     { path:'postdetails/:articlesId/:typeId', component:PostsDetailsComponent },
     { path:'contribute/:typeId', component:ContributeComponent },
     { path:'technologies', component:TechnologiesComponent },
+    { path:'jobs', component:JobsComponent },
+    {path:'jobsdetails/:id',component:JobsDetailsComponent},
     { path:'**', component:HomeComponent }
 ];

@@ -85,6 +85,7 @@ import { LikesModels } from './posts/posts-details/posts-details-counts/likes/li
 import { CommentsModels } from './posts/posts-details/posts-details-counts/comments/comments-models';
 import { TechnologiesModels } from './technologies/technologies-models';
 import { ContributeModels } from "./contribute/contribute-models";
+import { JobsModels } from './jobs/jobs-models';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ActiveUserComponent } from './active.user/active.user.component';
@@ -109,6 +110,13 @@ import { ViewsComponent } from './posts/posts-details/posts-details-counts/views
 import { CommentsDetailsComponent } from './posts/posts-details/posts-details-counts/comments/comments-details/comments-details.component';
 import { AddCommentsComponent } from './posts/posts-details/posts-details-counts/comments/comments-details/add-comments/add-comments.component';
 import { AddContributeComponent } from './contribute/add-contribute/add-contribute.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { JobsDetailsComponent } from './jobs/jobs-details/jobs-details.component';
+import { AddJobsComponent } from './jobs/add-jobs/add-jobs.component';
+import { JobsListsComponent } from './jobs/jobs-lists/jobs-lists.component';
+import { SearchJobsComponent } from './jobs/search-jobs/search-jobs.component';
+
+import { JobSearchService } from './jobs/jobs.search.service';
 
 @NgModule({
   declarations: [
@@ -198,7 +206,12 @@ import { AddContributeComponent } from './contribute/add-contribute/add-contribu
     ViewsComponent,
     CommentsDetailsComponent,
     AddCommentsComponent,
-    AddContributeComponent
+    AddContributeComponent,
+    JobsComponent,
+    JobsDetailsComponent,
+    AddJobsComponent,
+    JobsListsComponent,
+    SearchJobsComponent
   ],
   imports: [
     BrowserModule,
@@ -211,7 +224,7 @@ import { AddContributeComponent } from './contribute/add-contribute/add-contribu
   ],
   providers: [LoginService, DataService, RegisterService, RegisterModels, ViewsModels,
     TechnologiesService, TechnologiesModels, PostsService, LikesModels, CommentsModels,
-    ContributeModels, ClickEventService],
+    ContributeModels, ClickEventService, JobSearchService, JobsModels],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

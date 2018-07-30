@@ -1,0 +1,84 @@
+<div id="content">
+    <div class="container" id="about">
+      <div class="row">
+          <div class="block-highlight block-pd-h block-pd-sm">
+              <h3 class="block-title">
+                  {{job.JobTitle}}
+              </h3>
+              <!-- <div class="col-sm-1">
+                  <img src="{{technologies?.TechnologiesIcon}}" class="img-responsive underlay">
+              </div> -->
+              <div class="col-sm-12">
+                  
+                <div class="col-sm-6">
+                    <span><i class="fa fa-list"></i> For {{workName}}</span>                      
+                </div>
+                <div class="col-sm-4">
+                   <span><i class="fa fa-calendar"></i> Date: {{job.CreatedDateTime | date:'dd-MMM-yyy HH:mm a '}}</span>                      
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <span><i class="fa fa-user"></i> By {{companyName}} </span>                      
+                </div>  
+                <div class="col-sm-4">
+                    <span><i class="fa fa-map-marker"></i> At {{cityName}}, {{stateName}}, {{countryName}}</span>                      
+                </div>  
+                                       
+              </div>
+              <br>
+              
+          </div>
+      </div>
+      <div class="row block block-border-bottom">
+          <div class="col-md-8 blog-roll">
+              <h3 class="block-title">
+                About Job 
+              </h3>
+              <!-- Blog post 1-->
+              <div class="media">
+                
+                <div class="media-body">
+                    {{job.JobDesc}}    
+                </div>
+              </div>
+              <!-- Blog post 2 -->
+              
+            </div>
+      </div>
+      <div class="row block block-border-bottom">
+            <div class="col-md-8 blog-roll">
+                    <h3 class="block-title">
+                      Work Skills
+                    </h3>
+                    <!-- Blog post 1-->
+                    <div class="media">
+                      
+                      <div class="media-body">
+                          {{job.WorkSkills}}    
+                      </div>
+                      <p>Experience: {{job.WorkExp}}</p>
+                      <p>Qualification: {{job.WorkExp}}</p>
+                    </div>
+                    <!-- Blog post 2 -->
+                    
+                  </div> 
+      </div>
+      <div class="row block block-border-bottom">
+            <div class="col-md-8 blog-roll">
+                    <h3 class="block-title">
+                      About Company
+                    </h3>
+                    <!-- Blog post 1-->
+                    <div class="media">
+                      
+                      <div class="media-body">
+                          {{aboutCompany}}    
+                      </div>
+                    </div>
+                    <!-- Blog post 2 -->
+                    
+                  </div> 
+      </div>
+    </div>
+</div>k 
