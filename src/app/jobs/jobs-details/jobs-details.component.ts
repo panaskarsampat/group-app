@@ -3,17 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CountryService } from '../../Country/country.service';
-import { CountryModels } from '../../Country/country-models';
+
 import { StatesService } from '../../States/states.service';
-import { StatesModels } from '../../States/states-models';
+
 import { CityService } from '../../city/city.service';
-import { CityModels } from '../../city/city-models';
+
 import { DepartmentsService } from '../../Departments/departments.service';
-import { DepartmentsModels } from '../../Departments/departments-models';
+
 import { DesignationsService } from '../../Designations/designations.service';
-import { DesignationsModels } from '../../Designations/designations-models';
+
 import { CompanyService } from '../../company/company.service';
-import { CompanyModels } from '../../company/company-models';
 
 import { JobsService } from '../jobs.service';
 import { JobsModels } from '../jobs-models';
@@ -35,9 +34,10 @@ export class JobsDetailsComponent implements OnInit {
   cityName:string='';
   stateName:string='';
   countryName:string='';
+  job:JobsModels;
 
   constructor(private activateRoute : ActivatedRoute, private jobsdataservice:JobsService, private countrydataservice:CountryService,
-    private statedataservice:StatesService, private citydataservice:CityService, private job:JobsModels,
+    private statedataservice:StatesService, private citydataservice:CityService, 
     private positiondataservice:DepartmentsService, private workdataservice:DesignationsService, 
     private companydataservice:CompanyService, private data:JobSearchService, private spinner: NgxSpinnerService) { 
     this.sub = this.activateRoute.params.subscribe(params => {

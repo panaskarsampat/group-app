@@ -3,7 +3,7 @@
       <div class="row">
           <div class="block-highlight block-pd-h block-pd-sm">
               <h3 class="block-title">
-                  {{job.JobTitle}}
+                  {{job?.JobTitle}}
               </h3>
               <!-- <div class="col-sm-1">
                   <img src="{{technologies?.TechnologiesIcon}}" class="img-responsive underlay">
@@ -14,7 +14,7 @@
                     <span><i class="fa fa-list"></i> For {{workName}}</span>                      
                 </div>
                 <div class="col-sm-4">
-                   <span><i class="fa fa-calendar"></i> Date: {{job.CreatedDateTime | date:'dd-MMM-yyy HH:mm a '}}</span>                      
+                   <span><i class="fa fa-calendar"></i> Date: {{job?.CreatedDateTime | date:'dd-MMM-yyy HH:mm a '}}</span>                      
                 </div>
               </div>
               <div class="col-sm-12">
@@ -39,7 +39,7 @@
               <div class="media">
                 
                 <div class="media-body">
-                    {{job.JobDesc}}    
+                    {{job?.JobDesc}}    
                 </div>
               </div>
               <!-- Blog post 2 -->
@@ -55,10 +55,10 @@
                     <div class="media">
                       
                       <div class="media-body">
-                          {{job.WorkSkills}}    
+                          {{job?.WorkSkills}}    
                       </div>
-                      <p>Experience: {{job.WorkExp}}</p>
-                      <p>Qualification: {{job.WorkExp}}</p>
+                      <p>Experience: {{job?.WorkExp}}</p>
+                      <p>Qualification: {{job?.WorkExp}}</p>
                     </div>
                     <!-- Blog post 2 -->
                     

@@ -93,7 +93,7 @@ import { TechnologiesComponent } from './technologies/technologies.component';
 import { ContributeComponent } from './contribute/contribute.component';
 import { ContributeHeaderComponent } from './contribute/contribute-header/contribute-header.component';
 import { RecentPostsComponent } from './contribute/recent-posts/recent-posts.component';
-import { TechnologiesPostsComponent } from './technologies/technologies-lists/technologies-posts/technologies-posts.component';
+
 import { TechnologiesHeaderComponent } from './technologies/technologies-lists/technologies-header/technologies-header.component';
 import { TechnologiesCountsComponent } from './technologies/technologies-lists/technologies-counts/technologies-counts.component';
 import { TechnologiesListsComponent } from './technologies/technologies-lists/technologies-lists.component';
@@ -115,6 +115,11 @@ import { JobsDetailsComponent } from './jobs/jobs-details/jobs-details.component
 import { AddJobsComponent } from './jobs/add-jobs/add-jobs.component';
 import { JobsListsComponent } from './jobs/jobs-lists/jobs-lists.component';
 import { SearchJobsComponent } from './jobs/search-jobs/search-jobs.component';
+import { ContributeCountsComponent } from './contribute/contribute-counts/contribute-counts.component';
+import { ArticalesCountComponent } from './contribute/contribute-counts/articales-count/articales-count.component';
+import { BlogsCountComponent } from './contribute/contribute-counts/blogs-count/blogs-count.component';
+import { NewsCountComponent } from './contribute/contribute-counts/news-count/news-count.component';
+import { ResourcesCountComponent } from './contribute/contribute-counts/resources-count/resources-count.component';
 
 import { JobSearchService } from './jobs/jobs.search.service';
 
@@ -168,6 +173,11 @@ import { JobSearchService } from './jobs/jobs.search.service';
     PlansItem4Component,
     HappyCustomersComponent,
     TestimonialsComponent,
+    ContributeCountsComponent,
+ArticalesCountComponent,
+BlogsCountComponent,
+NewsCountComponent,
+ResourcesCountComponent,
     ClientsComponent,
     FooterComponent,
     CommentComponent,
@@ -190,7 +200,7 @@ import { JobSearchService } from './jobs/jobs.search.service';
     ContributeComponent,    
     ContributeHeaderComponent,
     RecentPostsComponent,
-    TechnologiesPostsComponent,
+    
     TechnologiesHeaderComponent,
     TechnologiesCountsComponent,    
     TechnologiesListsComponent,
