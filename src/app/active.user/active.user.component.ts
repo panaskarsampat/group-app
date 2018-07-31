@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ActivatedRoute, Params} from '@angular/router';
+import { Router } from '@angular/router';
 
 import { RegisterModels } from '../register/register-models';
 import { RegisterService } from '../register/register.service';
@@ -18,7 +19,7 @@ export class ActiveUserComponent implements OnInit {
   infoMessage:string='';  
   isSuccess:boolean=false;
 
-  constructor(private activatedRoute: ActivatedRoute, private registerService: RegisterService,  private user:RegisterModels, private fb: FormBuilder, private spinner: NgxSpinnerService) { 
+  constructor(private router:Router, private activatedRoute: ActivatedRoute, private registerService: RegisterService,  private user:RegisterModels, private fb: FormBuilder, private spinner: NgxSpinnerService) { 
     this.form  = this.fb.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -34,13 +35,14 @@ export class ActiveUserComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.spinner.show();
     this.isInfo=false;
     this.isSuccess=false;
 
     this.activatedRoute.params.subscribe((params: Params) => {
       let userId = params['userId'];
-      console.log(userId);
+      
       if(userId!==null){
         this.getUserDetails(userId);
       }else{
@@ -55,7 +57,8 @@ export class ActiveUserComponent implements OnInit {
     
     setTimeout(() => {
       this.registerService.getUserById(id).subscribe(
-        us => {                  
+        us => {           
+                
           this.user=us;
           if(this.user.IsUserEmailConfirmed){
             this.isInfo=true;
@@ -65,7 +68,7 @@ export class ActiveUserComponent implements OnInit {
               email:this.user.UserEmail,
               password:''           
             });
-            this.form.reset();
+            
           }
           
           this.spinner.hide();
@@ -91,6 +94,9 @@ export class ActiveUserComponent implements OnInit {
         us => {                  
           this.isSuccess=true;
           this.spinner.hide();
+          this.form.reset();
+          this.router.navigate(['/home']);
+          window.location.reload();
         },
         err => {        
           this.isInfo=true;
