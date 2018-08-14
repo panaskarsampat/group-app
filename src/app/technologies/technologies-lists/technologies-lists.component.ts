@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-technologies-lists',
@@ -9,12 +10,14 @@ import { ActivatedRoute, Params} from '@angular/router';
 export class TechnologiesListsComponent implements OnInit {
   techId:number;
   
-  constructor(private activatedRoute : ActivatedRoute) { }
+  constructor(private spinner: NgxSpinnerService, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.activatedRoute.params.subscribe((params: Params) => {
       let techId = params['techId'];      
       this.techId = techId;          
     });
+    this.spinner.hide();
   }
 }

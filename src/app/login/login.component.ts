@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.loginService.forgotPassword(frgForm.value.forgotEmail).subscribe(
         us => {                  
-                    
+               
           if(us) {
             this.isInfoForgot=true;
             this.infoMessageForgot="Password sent on the registred email id.";

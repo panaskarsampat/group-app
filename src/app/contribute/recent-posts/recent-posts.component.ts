@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { PostsModels } from '../../posts/posts-models';
 import { PostsService } from '../../posts/posts.service';
@@ -19,17 +20,20 @@ export class RecentPostsComponent implements OnInit, OnChanges {
   paginationLimit:Number;
   isLoggedUser:boolean=false;
 
-  constructor(private clickeventService:ClickEventService, private postsService:PostsService) { }
+  constructor(private spinner: NgxSpinnerService, private clickeventService:ClickEventService, private postsService:PostsService) { }
 
   getArticaleByTypeId(){
+    this.spinner.show();
     this.postsService.getArticales().subscribe(
       art => {        
         this.articaleslist = art.filter(a=>a.TypeId==this.typeId);    
         this.startPage = 0;
         this.paginationLimit = 3;    
+        this.spinner.hide();
       },
       err => {
-        console.log(err);        
+        console.log(err);   
+        this.spinner.hide();     
       }
     );
   }

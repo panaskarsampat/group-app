@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { PostsModels } from '../../posts/posts-models';
 import { PostsService } from '../../posts/posts.service';
@@ -18,8 +19,9 @@ export class PostsDetailsComponent implements OnInit {
   articale:PostsModels;
   emailId:string="";
 
-  constructor(private activatedRoute : ActivatedRoute,private loggedUser:RegisterModels, private postsService:PostsService, private ds: DataService) { 
+  constructor(private spinner: NgxSpinnerService, private activatedRoute : ActivatedRoute,private loggedUser:RegisterModels, private postsService:PostsService, private ds: DataService) { 
     this.activatedRoute.params.subscribe((params: Params) => {
+      this.spinner.show();
       let id = params['articlesId'];  
       let id2 = params['typeId'];  
 
@@ -45,10 +47,12 @@ export class PostsDetailsComponent implements OnInit {
     this.postsService.getArticalesById(this.articlesId).subscribe(
       art => {       
         
-        this.articale=art;          
+        this.articale=art;
+        this.spinner.hide();          
       },
       err => {
-        console.log(err);        
+        console.log(err);   
+        this.spinner.hide();     
       }
     );
     

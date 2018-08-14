@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { PostsModels } from '../posts/posts-models';
 import { PostsService } from '../posts/posts.service';
@@ -19,9 +20,10 @@ export class PostsComponent implements OnInit {
   paginationLimit:Number;
   isLoggedUser:boolean=false;
 
-  constructor(private postsService:PostsService, private loggedUser:RegisterModels, private ds: DataService, private router: Router) { }
+  constructor(private spinner: NgxSpinnerService, private postsService:PostsService, private loggedUser:RegisterModels, private ds: DataService, private router: Router) { }
 
   ngOnInit() {    
+    this.spinner.show();
     if(this.ds.getUser()!==null){
       this.loggedUser=this.ds.getUser();
       if(this.loggedUser===undefined){
@@ -42,16 +44,20 @@ export class PostsComponent implements OnInit {
       art => {        
         this.articaleslist = art.filter(a=>a.TechnologiesId==this.techId);    
         this.startPage = 0;
-        this.paginationLimit = 3;    
+        this.paginationLimit = 3;  
+        this.spinner.hide();  
       },
       err => {
-        console.log(err);        
+        console.log(err);   
+        this.spinner.hide();     
       }
     );
   }
 
   showMoreItems()
   {     
+    this.spinner.show();
     this.paginationLimit = Number(this.paginationLimit) + 3;        
+    this.spinner.hide();
   }
 }
