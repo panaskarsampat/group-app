@@ -20,7 +20,7 @@ export class TechnologiesCountsComponent implements OnInit {
   constructor(private spinner: NgxSpinnerService, private postsService:PostsService) { }
 
   ngOnInit() {
-    this.spinner.show();
+    //this.spinner.show();
     this.getCounts();
   }
 
@@ -33,11 +33,11 @@ export class TechnologiesCountsComponent implements OnInit {
         this.blogsCounts = this.articalesLists.filter(a=>a.TypeId==2 && a.TechnologiesId==this.techId).length;
         this.resourcesCounts = this.articalesLists.filter(a=>a.TypeId==3 && a.TechnologiesId==this.techId).length;
         this.newsCounts = this.articalesLists.filter(a=>a.TypeId==5 && a.TechnologiesId==this.techId).length;
-        this.spinner.hide();  
+        //this.spinner.hide();  
       },
       err => {
         console.log(err);  
-        this.spinner.hide();        
+        //this.spinner.hide();        
       }
     );
   }

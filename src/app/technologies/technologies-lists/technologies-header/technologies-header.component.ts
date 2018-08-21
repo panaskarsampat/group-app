@@ -17,7 +17,7 @@ export class TechnologiesHeaderComponent implements OnInit {
   constructor(private spinner: NgxSpinnerService, private technologiesService:TechnologiesService) { }
 
   ngOnInit() {
-    this.spinner.show()
+    //this.spinner.show()
     this.getTechnologiesDetails(this.techId);
   }
 
@@ -27,10 +27,10 @@ export class TechnologiesHeaderComponent implements OnInit {
       this.technologiesService.getTechnologiesById(id).subscribe(
         tc => {                  
           this.technologies=tc;          
-          this.spinner.hide();
+          //this.spinner.hide();
         },
         err => {                  
-          this.spinner.hide();     
+          //this.spinner.hide();     
         }
       );
     }, 1000); 

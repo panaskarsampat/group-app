@@ -36,7 +36,7 @@ export class HeaderLinkmenusComponent implements OnInit {
       this.spinner.hide();    
     }, 1000);
     this.router.navigate(['/home']);
-    window.location.reload();
+   // window.location.reload();
   }
 
   ngOnDestroy() {
