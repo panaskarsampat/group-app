@@ -51,6 +51,7 @@ export class ContributeHeaderComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(){
+    
     this.getTypeName();
   }
 }

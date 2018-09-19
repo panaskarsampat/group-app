@@ -58,6 +58,7 @@ export class RecentPostsComponent implements OnInit, OnChanges {
   }
   
   ngOnChanges(){
+    
     this.getArticaleByTypeId();  
 
   }
